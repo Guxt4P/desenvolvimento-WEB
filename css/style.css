@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
+:root{
+  --cor-primaria: #D4AF37;     
+  --cor-secundaria:#4B0E19;    
+  --cor-fundo:     #121212;     
+  --cor-texto:     #F5F5F5;     
+  --cor-borda:     #A67C00;     
+  --cor-bloco:     #1e1e1e;     
+}
+
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html,body{ height:100%; }
+body{ font-family:"Inter",sans-serif; background:var(--cor-fundo); color:var(--cor-texto); line-height:1.6; }
+
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:0 auto;
+  padding:20px;
+}
+
+
+nav,header,footer{
+  text-align:center;
+  border-bottom:1px solid var(--cor-borda);
+  padding:16px 20px;           
+}
+nav{ background:var(--cor-primaria); }
+header{ background:var(--cor-secundaria); }
+footer{ background:var(--cor-secundaria); border-bottom:none; }
+
+
+main{
+  background:var(--cor-fundo);
+  margin:0 auto;
+  padding:32px 40px;
+  border-radius:12px;
+  box-shadow:0 4px 20px rgba(0,0,0,.4);
+
+  display:flex;
+  flex-wrap:wrap;           /* permite empilhar colunas em telas pequenas */
+  gap:20px;                    
+  align-items:flex-start;
+}
+
+
+.caixa{
+  flex:1 1 45%;            /* ocupa 45% da largura, mas pode encolher */
+  min-width:260px;   
+  padding:20px;
+  border:1px dashed var(--cor-borda);
+  border-radius:8px;
+  background:var(--cor-fundo);
+}
+
+
+#conteudo{
+  flex:1 1 100%;
+  padding:20px;
+  border:1px solid var(--cor-primaria);
+  border-radius:8px;
+  background:var(--cor-bloco);
+  max-width:1000px;           
+  margin-inline:auto;         
+}
+
+
+#conteudo h3{ font-size:1.4rem; margin-bottom:.5rem; }
+.lista{
+  list-style-position:inside;
+  margin-top:8px;
+}
+.lista li{ margin:8px 0; }
+
+
+.imagem1{
+  width:190px;                 /* sua largura preferida */
+  max-width:100%;
+  height:auto;
+  display:block;              /* garante que a imagem não extrapole o contêiner */
+  margin:20px auto;           
+  border-radius:6px;
+}
+
+/* ====== Responsivo (empilha as colunas) ====== */
+@media (max-width: 768px){           /* telas pequenas */     
+  .caixa{ flex:1 1 100%; }           /* ocupa 100% da largura */
+  main{ padding:24px; }              /* reduz o padding do main */
+}
